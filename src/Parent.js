@@ -4,8 +4,7 @@ import {Header} from './Header';
 import {Selector} from './Selector';
 import {LeftButton} from './LeftButton';
 import {RightButton} from './RightButton';
-//import { Child } from './Child';
-//import { Sibling } from './Sibling';
+import {Proficiencies} from './Proficiencies';
 
 export class Parent extends Component {
   
@@ -21,7 +20,7 @@ export class Parent extends Component {
   changeTitle(direction) {
 
     var change = (direction === "left") ? -1 : 1;
-    var titles = ["Proficiencies", "Gear"];
+    var titles = ["Proficiencies", "Gear", "Dice roller", "Personalities"];
     var x;
     var newTitle;
 
@@ -29,7 +28,10 @@ export class Parent extends Component {
       if (titles[x] === this.state.menuTitle) {
         if (x === 0 && change === -1) {
           newTitle = titles[titles.length-1]
-        } else {
+        } else if (x===titles.length-1 && change === 1) {
+          newTitle = titles[0];
+        }
+        else {
           newTitle = titles[x+change];
         }
         
@@ -46,6 +48,15 @@ export class Parent extends Component {
 
 
   render() {
+    let page;
+
+    switch (this.state.menuTitle) {
+      case "Proficiencies":
+        page = <Proficiencies />;
+        break;
+    }
+
+
     return (
       <div id="main">
         <h1 style={{ marginBottom:0}}>
@@ -55,7 +66,11 @@ export class Parent extends Component {
           onClick = {this.changeTitle}/>
         <Selector 
           menuTitle = {this.state.menuTitle} />
-        <RightButton />
+        <RightButton 
+          onClick = {this.changeTitle}/>
+        {page}
+
+
           
       </div>
       );
