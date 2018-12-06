@@ -30,3 +30,14 @@
     transform: rotate(360deg);
   }
 }
+
+th, td {
+  padding: 3px;
+  padding-left:7px;
+  padding-right:9px;
+}
+
+table, th, td {
+  border: 1px solid white;
+  border-collapse: collapse;
+}
