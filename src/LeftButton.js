@@ -7,6 +7,7 @@ export class LeftButton extends Component {
 		this.handleClick = this.handleClick.bind(this);
 	}
 
+	//Passes argument back to changeTitle in Parent.js whenever the left arrow in the menu is clicked
 	handleClick() {
 		this.props.onClick("left");
 	}

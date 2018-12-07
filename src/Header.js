@@ -3,11 +3,12 @@ import './App.css';
 
 export class Header extends Component {
 
+	//Simply displays the header
 	render() {
 		return (
-			<div>
+			<h1 style={{marginBottom: 0}}>
 				Rise of the Paramosits
-			</div>
+			</h1>
 		);
 	}
 }

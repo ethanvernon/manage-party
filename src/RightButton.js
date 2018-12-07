@@ -7,6 +7,7 @@ export class RightButton extends Component {
 		this.handleClick = this.handleClick.bind(this);
 	}
 
+	//Passes argument back to changeTitle in Parent.js whenever the right arrow in the menu is clicked
 	handleClick() {
 		this.props.onClick("right");
 	}

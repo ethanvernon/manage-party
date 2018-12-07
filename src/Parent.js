@@ -22,6 +22,9 @@ export class Parent extends Component {
   }
 
 
+
+  //Takes argument from LeftButton.js and RightButton.js and passes new heading to Selector.js
+  //Updates state for menuTitle
   changeTitle(direction) {
 
     var change = (direction === "left") ? -1 : 1;
@@ -43,13 +46,13 @@ export class Parent extends Component {
       }
     }
 
-    console.log(titles.length);
-
     this.setState({
       menuTitle: newTitle
     });
   }
 
+
+  //Update current personality state. takes argument from Personalities.js
   updateCurrentPersonality(name) {
     this.setState({
       currentPersonality: name
@@ -61,6 +64,8 @@ export class Parent extends Component {
   render() {
     let page;
 
+
+    //renders appropriate menu depending on this.state.menuTitle
     switch (this.state.menuTitle) {
       case "Proficiencies":
         page = <Proficiencies />;
@@ -74,9 +79,7 @@ export class Parent extends Component {
 
     return (
       <div id="main">
-        <h1 style={{ marginBottom:0}}>
-          <Header />
-        </h1>
+        <Header />
         <LeftButton           
           onClick = {this.changeTitle}/>
         <Selector 

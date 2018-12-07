@@ -7,6 +7,7 @@ export class Personalities extends Component {
 		this.handleClick = this.handleClick.bind(this);
 	}
 
+	//passes argument back to updateCurrentPersonality in Parent.js
 	handleClick(name) {
 		console.log(name.currentTarget.innerText);
 		this.props.onClick(name);
