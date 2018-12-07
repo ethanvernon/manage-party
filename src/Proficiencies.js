@@ -7,6 +7,7 @@ export class Proficiencies extends Component {
 		return (
 			<div style={{fontSize: 14, marginTop:10}}>
 			<table>
+			<thead>
 				<tr>
 					<th>Skill name</th>
 					<th>Augest</th>
@@ -15,9 +16,9 @@ export class Proficiencies extends Component {
 					<th>Roque</th>
 					<th>Urvyn</th>
 				</tr>
-
+			</thead>
 			
-
+			<tbody>
 				<tr><td><b>Acrobatics:</b></td> <td></td><td></td><td>Kane (+3)</td><td></td><td></td></tr>
 				<tr><td><b>Arcana:</b></td> <td></td><td></td><td></td><td></td><td>Urvyn (+5)</td></tr>
 				<tr><td><b>Athletics:</b></td><td></td> <td>Kalista (+5)</td><td></td><td></td><td></td></tr>
@@ -34,6 +35,7 @@ export class Proficiencies extends Component {
 				<tr><td><b>Sleight of Hand:</b></td> <td></td><td></td><td></td><td>Roque (+5)</td><td></td></tr>
 				<tr><td><b>Stealth:</b></td> <td></td><td></td><td></td><td>Roque (+5)</td> <td>Urvyn (+4)</td></tr>
 				<tr><td><b>Survival:</b></td> <td></td><td></td><td></td><td></td><td>Urvyn (+3)</td></tr>
+			</tbody>
 				</table>
 			</div>
 		);

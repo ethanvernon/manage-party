@@ -5,6 +5,7 @@ import {Selector} from './Selector';
 import {LeftButton} from './LeftButton';
 import {RightButton} from './RightButton';
 import {Proficiencies} from './Proficiencies';
+import {Personalities} from './Personalities';
 
 export class Parent extends Component {
   
@@ -53,6 +54,9 @@ export class Parent extends Component {
     switch (this.state.menuTitle) {
       case "Proficiencies":
         page = <Proficiencies />;
+        break;
+      case "Personalities":
+        page = <Personalities />;
         break;
     }
 
