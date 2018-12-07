@@ -6,7 +6,7 @@ export class Augest extends Component {
 render() {
 	return (
 		<div>
-			Augest Personality
+			Augest's Personality
 		</div>
 	)
 }

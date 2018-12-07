@@ -72,7 +72,8 @@ export class Parent extends Component {
         break;
       case "Personalities":
         page = <Personalities 
-          onClick = {this.updateCurrentPersonality}/>;
+          onClick = {this.updateCurrentPersonality}
+          current = {this.state.currentPersonality}/>;
         break;
     }
 
@@ -87,7 +88,6 @@ export class Parent extends Component {
         <RightButton 
           onClick = {this.changeTitle}/>
         {page}
-
 
           
       </div>
