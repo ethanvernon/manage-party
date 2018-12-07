@@ -49,3 +49,8 @@ table, th, td {
 #personality-header th {
   width:60px;
 }
+
+.current {
+  background-color: white;
+  color: #282c34;
+}

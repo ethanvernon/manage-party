@@ -12,6 +12,14 @@ export class Personalities extends Component {
 	handleClick(name) {
 		console.log(name.currentTarget.innerText);
 		this.props.onClick(name.currentTarget.innerText);
+
+		var elements = document.getElementsByClassName("person");
+
+		for (var i=0; i<elements.length; i++) {
+			elements[i].classList.remove("current");
+		}
+
+		name.currentTarget.className = "person current";
 	}
 
 	render() {
@@ -19,7 +27,7 @@ export class Personalities extends Component {
 		 let page;
 
 
-	    //renders appropriate menu depending on this.state.menuTitle
+	    //renders appropriate personality info depending on this.props.current
 
 	    console.log("current page is " + JSON.stringify(this.props.current));
 	    switch (this.props.current) {
@@ -33,7 +41,7 @@ export class Personalities extends Component {
 			<table id="personality-header" style={{fontSize: 14, marginTop:10, marginLeft: "auto", marginRight: "auto", userSelect:"none"}}>
 				<tbody>
 					<tr>
-						<th onClick={this.handleClick}>Augest</th>
+						<th className="current person" onClick={this.handleClick}>Augest</th>
 						<th onClick={this.handleClick}>Kalista</th>
 						<th onClick={this.handleClick}>Kane</th>
 						<th onClick={this.handleClick}>Roque</th>
