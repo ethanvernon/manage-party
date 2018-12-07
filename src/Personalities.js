@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import {Augest} from './Augest';
+import {Kalista} from './Kalista';
 
 export class Personalities extends Component {
 	constructor(props) {
@@ -34,6 +35,9 @@ export class Personalities extends Component {
 	      case "Augest":
 	        page = <Augest />;
 	        break;
+	      case "Kalista":
+	      	page = <Kalista />;
+	      	break;
 	    }
 
 		return (
