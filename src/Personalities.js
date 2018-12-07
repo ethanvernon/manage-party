@@ -9,6 +9,7 @@ export class Personalities extends Component {
 
 	handleClick(name) {
 		console.log(name.currentTarget.innerText);
+		this.props.onClick(name);
 	}
 
 	render() {
@@ -25,6 +26,9 @@ export class Personalities extends Component {
 					</tr>
 				</tbody>
 			</table>
+
+
+
 		</div>
 		)
 	}

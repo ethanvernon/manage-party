@@ -11,10 +11,14 @@ export class Parent extends Component {
   
   constructor(props) {
     super(props);
+
     this.state = {
-      menuTitle: 'Proficiencies'
+      menuTitle: 'Proficiencies',
+      currentPersonality: 'Augest'
     };
+
     this.changeTitle = this.changeTitle.bind(this);
+    this.updateCurrentPersonality = this.updateCurrentPersonality.bind(this);
   }
 
 
@@ -46,6 +50,12 @@ export class Parent extends Component {
     });
   }
 
+  updateCurrentPersonality(name) {
+    this.setState({
+      currentPersonality: name
+    })
+  }
+
 
 
   render() {
@@ -56,7 +66,8 @@ export class Parent extends Component {
         page = <Proficiencies />;
         break;
       case "Personalities":
-        page = <Personalities />;
+        page = <Personalities 
+          onClick = {this.updateCurrentPersonality}/>;
         break;
     }
 
