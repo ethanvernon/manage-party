@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import {Augest} from './Augest';
 import {Kalista} from './Kalista';
+import {Kane} from './Kane';
 
 export class Personalities extends Component {
 	constructor(props) {
@@ -37,6 +38,9 @@ export class Personalities extends Component {
 	        break;
 	      case "Kalista":
 	      	page = <Kalista />;
+	      	break;
+	      case "Kane":
+	      	page = <Kane />;
 	      	break;
 	    }
 
