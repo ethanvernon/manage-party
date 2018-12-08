@@ -63,3 +63,10 @@ table, th, td {
   margin-left:auto;
   margin-right:auto;
 }
+
+.prof-headers {
+  background-color: white;
+  color: #282c34;
+  border: 1px solid #282c34;
+  border-collapse: collapse;  
+}
