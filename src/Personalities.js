@@ -3,6 +3,8 @@ import './App.css';
 import {Augest} from './Augest';
 import {Kalista} from './Kalista';
 import {Kane} from './Kane';
+import {Roque} from './Roque';
+import {Urvyn} from './Urvyn';
 
 export class Personalities extends Component {
 	constructor(props) {
@@ -30,8 +32,6 @@ export class Personalities extends Component {
 
 
 	    //renders appropriate personality info depending on this.props.current
-
-	    console.log("current page is " + JSON.stringify(this.props.current));
 	    switch (this.props.current) {
 	      case "Augest":
 	        page = <Augest />;
@@ -41,6 +41,12 @@ export class Personalities extends Component {
 	      	break;
 	      case "Kane":
 	      	page = <Kane />;
+	      	break;
+	      case "Roque":
+	      	page = <Roque />;
+	      	break;
+	      case "Urvyn":
+	      	page = <Urvyn />;
 	      	break;
 	    }
 
