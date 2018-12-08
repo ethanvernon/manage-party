@@ -47,8 +47,7 @@ export class Parent extends Component {
     }
 
     this.setState({
-      menuTitle: newTitle,
-      currentPersonality: "Augest"
+      menuTitle: newTitle
     });
   }
 

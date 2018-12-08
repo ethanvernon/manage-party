@@ -55,11 +55,11 @@ export class Personalities extends Component {
 			<table id="personality-header" style={{fontSize: 14, marginTop:10, marginLeft: "auto", marginRight: "auto", userSelect:"none"}}>
 				<tbody>
 					<tr>
-						<th className="current person" onClick={this.handleClick}>Augest</th>
-						<th onClick={this.handleClick}>Kalista</th>
-						<th onClick={this.handleClick}>Kane</th>
-						<th onClick={this.handleClick}>Roque</th>
-						<th onClick={this.handleClick}>Urvyn</th>
+						<th className={this.props.current === "Augest" ? "current person" : "person"} onClick={this.handleClick}>Augest</th>
+						<th className={this.props.current === "Kalista" ? "current person" : "person"} onClick={this.handleClick}>Kalista</th>
+						<th className={this.props.current === "Kane" ? "current person" : "person"} onClick={this.handleClick}>Kane</th>
+						<th className={this.props.current === "Roque" ? "current person" : "person"} onClick={this.handleClick}>Roque</th>
+						<th className={this.props.current === "Urvyn" ? "current person" : "person"} onClick={this.handleClick}>Urvyn</th>
 					</tr>
 				</tbody>
 			</table>
