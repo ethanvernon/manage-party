@@ -34,7 +34,7 @@ export class Personalities extends Component {
 	//render function
 	render() {
 
-		 let page;
+		let page;
 
 
 	    //renders appropriate personality info depending on this.props.current

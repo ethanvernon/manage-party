@@ -6,6 +6,7 @@ import {LeftButton} from './LeftButton';
 import {RightButton} from './RightButton';
 import {Proficiencies} from './Proficiencies';
 import {Personalities} from './Personalities';
+import {Combat} from './Combat';
 
 export class Parent extends Component {
   
@@ -28,7 +29,7 @@ export class Parent extends Component {
   changeTitle(direction) {
 
     var change = (direction === "left") ? -1 : 1;
-    var titles = ["Proficiencies", "Gear", "Dice roller", "Personalities"];
+    var titles = ["Proficiencies", "Gear", "Dice roller", "Personalities", "Combat"];
     var x;
     var newTitle;
 
@@ -74,6 +75,9 @@ export class Parent extends Component {
         page = <Personalities 
           onClick = {this.updateCurrentPersonality}
           current = {this.state.currentPersonality}/>;
+        break;
+      case "Combat":
+        page = <Combat />;
         break;
     }
 
