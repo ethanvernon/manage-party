@@ -5,7 +5,7 @@ export class Proficiencies extends Component {
 
 	render() {
 		return (
-			<div style={{fontSize: 14, marginTop:10}}>
+			<div style={{fontSize: 14}}>
 			<table>
 			<thead>
 				<tr>

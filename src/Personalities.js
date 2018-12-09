@@ -58,7 +58,7 @@ export class Personalities extends Component {
 
 		return (
 		<div>
-			<table id="personality-header" style={{fontSize: 14, marginTop:10, marginLeft: "auto", marginRight: "auto", userSelect:"none"}}>
+			<table id="personality-header" style={{fontSize: 14, marginLeft: "auto", marginRight: "auto", userSelect:"none"}}>
 				<tbody>
 					<tr>
 						<th className={this.props.current === "Augest" ? "current person" : "person"} onClick={this.handleClick}>Augest</th>

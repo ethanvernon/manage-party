@@ -6,7 +6,7 @@ export class Combat extends Component {
 	render() {
 
 		return(
-			<div className="row justify-content-center" style={{display:"flex", paddingTop:10}}>
+			<div className="row justify-content-center" style={{display:"flex"}}>
 				<div className="col-xs-5" style={{paddingRight:20, paddingLeft:20, paddingBottom:20}}>
 					<h3>Augest</h3>
 					<div style={{fontSize:14, textAlign:"left"}}>
