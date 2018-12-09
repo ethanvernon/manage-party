@@ -17,6 +17,11 @@ export class Personalities extends Component {
 		console.log(name.currentTarget.innerText);
 		this.props.onClick(name.currentTarget.innerText);
 
+		applyCurrentClass();
+	}
+
+	//applies css class "current" to current viewed tab
+	applyCurrentClass() {
 		var elements = document.getElementsByClassName("person");
 
 		for (var i=0; i<elements.length; i++) {
@@ -26,6 +31,7 @@ export class Personalities extends Component {
 		name.currentTarget.className = "person current";
 	}
 
+	//render function
 	render() {
 
 		 let page;
