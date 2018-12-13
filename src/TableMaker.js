@@ -22,7 +22,7 @@ export class TableMaker extends Component {
 					onClick = {this.props.onClick}
 	          		current = {this.props.current}/>
 
-				<table style={{tableLayout:"fixed", width:500}}>
+				<table style={{tableLayout:"fixed", width:500, fontSize:14}}>
 					<thead>
 						<tr>
 							<th>Item name</th>
@@ -33,7 +33,7 @@ export class TableMaker extends Component {
 					<tbody>
 						<tr>
 							<td>Torches</td>
-							<td>- 5 +</td>
+							<td><div style={{textAlign:"center", display:"inline-block", width:"33%", marginLeft: "auto", marginRight:"auto"}}>-</div> 5 <div style={{textAlign:"center", display:"inline-block", width:"33%", marginLeft: "auto", marginRight:"auto"}}>+</div></td>
 						</tr>
 					</tbody>
 
