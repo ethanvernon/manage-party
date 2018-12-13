@@ -5,6 +5,7 @@ import {Kalista} from './Kalista';
 import {Kane} from './Kane';
 import {Roque} from './Roque';
 import {Urvyn} from './Urvyn';
+import {CharacterNavBar} from './CharacterNavBar';
 
 export class Personalities extends Component {
 	constructor(props) {
@@ -58,17 +59,9 @@ export class Personalities extends Component {
 
 		return (
 		<div>
-			<table id="personality-header" style={{fontSize: 14, marginLeft: "auto", marginRight: "auto", userSelect:"none"}}>
-				<tbody>
-					<tr>
-						<th className={this.props.current === "Augest" ? "current person" : "person"} onClick={this.handleClick}>Augest</th>
-						<th className={this.props.current === "Kalista" ? "current person" : "person"} onClick={this.handleClick}>Kalista</th>
-						<th className={this.props.current === "Kane" ? "current person" : "person"} onClick={this.handleClick}>Kane</th>
-						<th className={this.props.current === "Roque" ? "current person" : "person"} onClick={this.handleClick}>Roque</th>
-						<th className={this.props.current === "Urvyn" ? "current person" : "person"} onClick={this.handleClick}>Urvyn</th>
-					</tr>
-				</tbody>
-			</table>
+			<CharacterNavBar 
+				onClick = {this.props.onClick}
+          		current = {this.props.current}/>
 
 			{page}
 

@@ -26,29 +26,7 @@ export class CharacterNavBar extends Component {
 	}
 
 	//render function
-	render() {
-
-		let page;
-
-
-	    //renders appropriate personality info depending on this.props.current
-	    switch (this.props.current) {
-	      case "Augest":
-	        page = <Augest />;
-	        break;
-	      case "Kalista":
-	      	page = <Kalista />;
-	      	break;
-	      case "Kane":
-	      	page = <Kane />;
-	      	break;
-	      case "Roque":
-	      	page = <Roque />;
-	      	break;
-	      case "Urvyn":
-	      	page = <Urvyn />;
-	      	break;
-	    }
+	render() {   
 
 		return (
 		<div>
@@ -63,8 +41,6 @@ export class CharacterNavBar extends Component {
 					</tr>
 				</tbody>
 			</table>
-
-			{page}
 
 		</div>
 		)
