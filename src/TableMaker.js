@@ -21,12 +21,16 @@ export class TableMaker extends Component {
 
 			//inner loop to create children
 			for (let j=0;j<2;j++) {
-				children.push(<td>{test[count]}</td>);
+				if (j==1) {
+					children.push(<td key={"col"+count}><div className="inventory-op">-</div>{test[count]}<div className="inventory-op">+</div></td>);
+				} else {
+					children.push(<td key={"col"+count}>{test[count]}</td>);
+				} 
 				count+=1;
 			}			
 
 			//Create the parent and add the children
-			table.push(<tr>{children}</tr>);
+			table.push(<tr key={"row"+count}>{children}</tr>);
 		}
 		
 		return table;
@@ -59,8 +63,10 @@ export class TableMaker extends Component {
 
 				</table>
 
-				<table>
-					{this.makeTable()}
+				<table style={{tableLayout:"fixed", width:500, fontSize:14}}>
+					<tbody>
+						{this.makeTable()}
+					</tbody>
 				</table>
 
 
