@@ -7,7 +7,7 @@ export class CharacterNavBar extends Component {
 		this.handleClick = this.handleClick.bind(this);
 	}
 
-	//passes argument back to updateCurrentPersonality in Parent.js
+	//passes argument back to updateCurrentInventory in Parent.js
 	handleClick(name) {
 		console.log(name.currentTarget.innerText);
 		this.props.onClick(name.currentTarget.innerText);
@@ -30,7 +30,7 @@ export class CharacterNavBar extends Component {
 
 		return (
 		<div>
-			<table className="character-header" style={{fontSize: 14, marginLeft: "auto", marginRight: "auto", userSelect:"none"}}>
+			<table className="character-header" style={{fontSize: 14, marginLeft: "auto", marginRight: "auto", userSelect:"none", marginBottom: 10}}>
 				<tbody>
 					<tr>
 						<th className={this.props.current === "Augest" ? "current person" : "person"} onClick={this.handleClick}>Augest</th>

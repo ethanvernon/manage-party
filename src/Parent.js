@@ -16,11 +16,13 @@ export class Parent extends Component {
 
     this.state = {
       menuTitle: 'Proficiencies',
-      currentPersonality: 'Augest'
+      currentPersonality: 'Augest',
+      currentInventory: 'Augest'
     };
 
     this.changeTitle = this.changeTitle.bind(this);
     this.updateCurrentPersonality = this.updateCurrentPersonality.bind(this);
+    this.updateCurrentInventory = this.updateCurrentInventory.bind(this);
   }
 
 
@@ -30,7 +32,7 @@ export class Parent extends Component {
   changeTitle(direction) {
 
     var change = (direction === "left") ? -1 : 1;
-    var titles = ["Proficiencies", "Gear", "Dice roller", "Personalities", "Combat", "Inventory"];
+    var titles = ["Proficiencies", "Dice roller", "Personalities", "Inventory", "Combat"];
     var x;
     var newTitle;
 
@@ -61,6 +63,12 @@ export class Parent extends Component {
     })
   }
 
+  updateCurrentInventory(name) {
+    this.setState({
+      currentInventory: name
+    })
+  }
+
 
 
   render() {
@@ -81,7 +89,9 @@ export class Parent extends Component {
         page = <Combat />;
         break;
       case "Inventory":
-        page = <TableMaker />;
+        page = <TableMaker 
+          onClick = {this.updateCurrentInventory}
+          current = {this.state.currentInventory}/>;
         break;
     }
 

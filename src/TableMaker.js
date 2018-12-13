@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import { CharacterNavBar } from './CharacterNavBar';
 
 export class TableMaker extends Component {
 	constructor(props) {
@@ -17,7 +18,11 @@ export class TableMaker extends Component {
 
 		return(
 			<div>
-				<table>
+				<CharacterNavBar 
+					onClick = {this.props.onClick}
+	          		current = {this.props.current}/>
+
+				<table style={{tableLayout:"fixed", width:500}}>
 					<thead>
 						<tr>
 							<th>Item name</th>
@@ -28,7 +33,7 @@ export class TableMaker extends Component {
 					<tbody>
 						<tr>
 							<td>Torches</td>
-							<td>5</td>
+							<td>- 5 +</td>
 						</tr>
 					</tbody>
 
