@@ -70,3 +70,11 @@ table, th, td {
   border: 1px solid #282c34;
   border-collapse: collapse;  
 }
+
+.inventory-op {
+  textAlign:center;
+  display:inline-block;
+  width:33%;
+  margin-left: auto;
+  marginRight:auto;
+}
