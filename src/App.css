@@ -42,11 +42,11 @@ table, th, td {
   border-collapse: collapse;
 }
 
-#personality-header:hover {
+.character-header:hover {
   cursor:pointer;
 }
 
-#personality-header th {
+.character-header th {
   width:60px;
 }
 

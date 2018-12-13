@@ -30,7 +30,7 @@ export class CharacterNavBar extends Component {
 
 		return (
 		<div>
-			<table id="personality-header" style={{fontSize: 14, marginLeft: "auto", marginRight: "auto", userSelect:"none"}}>
+			<table className="character-header" style={{fontSize: 14, marginLeft: "auto", marginRight: "auto", userSelect:"none"}}>
 				<tbody>
 					<tr>
 						<th className={this.props.current === "Augest" ? "current person" : "person"} onClick={this.handleClick}>Augest</th>
