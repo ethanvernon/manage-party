@@ -7,6 +7,7 @@ import {RightButton} from './RightButton';
 import {Proficiencies} from './Proficiencies';
 import {Personalities} from './Personalities';
 import {Combat} from './Combat';
+import {TableMaker} from './TableMaker';
 
 export class Parent extends Component {
   
