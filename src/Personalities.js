@@ -8,9 +8,6 @@ import {Urvyn} from './Urvyn';
 import {CharacterNavBar} from './CharacterNavBar';
 
 export class Personalities extends Component {
-	constructor(props) {
-		super(props);
-	}
 
 	//renders a CharacterNavBar and the appropriate character info based on this.props.current
 	//this.props.current is equal to Parent.js this.state.currentPersonality

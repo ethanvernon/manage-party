@@ -21,7 +21,7 @@ export class TableMaker extends Component {
 
 			//inner loop to create children
 			for (let j=0;j<2;j++) {
-				if (j==1) {
+				if (j===1) {
 					children.push(<td key={"col"+count}><div className="inventory-op">-</div>{test[count]}<div className="inventory-op">+</div></td>);
 				} else {
 					children.push(<td key={"col"+count}>{test[count]}</td>);
