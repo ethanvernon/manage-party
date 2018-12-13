@@ -30,7 +30,7 @@ export class Parent extends Component {
   changeTitle(direction) {
 
     var change = (direction === "left") ? -1 : 1;
-    var titles = ["Proficiencies", "Gear", "Dice roller", "Personalities", "Combat"];
+    var titles = ["Proficiencies", "Gear", "Dice roller", "Personalities", "Combat", "Inventory"];
     var x;
     var newTitle;
 
@@ -79,6 +79,9 @@ export class Parent extends Component {
         break;
       case "Combat":
         page = <Combat />;
+        break;
+      case "Inventory":
+        page = <TableMaker />;
         break;
     }
 
