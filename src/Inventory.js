@@ -24,7 +24,17 @@ export class Inventory extends Component {
 			for (let j=0;j<2;j++) {
 				if (j===1) {
 					//includes + and - sign next to quantities
-					children.push(<td key={"col"+count}><div className="inventory-plus" counter={count} onClick={this.handleClick}>-</div><span>{test[count]}</span><div className="inventory-minus" counter={count} onClick={this.handleClick}>+</div></td>);
+					children.push(<td key={"col"+count}>
+									<div className="inventory-plus" counter={count} onClick={this.handleClick}>
+										-
+									</div>
+									<span>
+										{test[count]}
+									</span>
+									<div className="inventory-minus" counter={count} onClick={this.handleClick}>
+										+
+									</div>
+								</td>);
 				} else {
 					//just the item name
 					children.push(<td key={"col"+count}>{test[count]}</td>);
@@ -49,7 +59,7 @@ export class Inventory extends Component {
 		let character = this.props.current;
 		let operation = e.target.getAttribute('class') === "inventory-plus";
 		let placeInArray = e.target.getAttribute('counter');
-		
+
 		this.props.onChange(character, operation, placeInArray);
 	}
 
@@ -63,8 +73,10 @@ export class Inventory extends Component {
 	          		current = {this.props.current}/>
 
 				<table style={{tableLayout:"fixed", width:500, fontSize:14}}>
-				<col/>
-				<col style={{width:150}}/>
+				<colgroup>
+					<col/>
+					<col style={{width:150}}/>
+				</colgroup>
 				<thead><tr><th>Item name</th><th>Quantity</th></tr></thead>
 					<tbody>
 						{this.makeTable(this.props.currentInv)}

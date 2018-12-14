@@ -75,25 +75,49 @@ export class Parent extends Component {
   }
 
   changeInventory(character, operation, placeInArray) {
-    if (character === "Augest") {
-      if (operation) {
-        let oldArray = this.state.augestInventory;
 
-        if (oldArray[placeInArray] > 0) {
-          oldArray[placeInArray] -= 1;
-          this.setState({
-            augestInventory: oldArray
-          }) 
-        }
-      } else {
-        let oldArray = this.state.augestInventory;
-        
-        oldArray[placeInArray] += 1;
-        this.setState({
-          augestInventory: oldArray
-        })
-      }
+    let oldArray;
+    let changeState;
+
+    //decide which state/inventory to modify based on value of character argument
+    switch (character) {
+      case "Augest":
+        oldArray = this.state.augestInventory;
+        changeState = "augestInventory";
+        break;
+      case "Kalista":
+        oldArray = this.state.kalistaInventory;
+        changeState = "kalistaInventory";
+        break;
+      /*case "Kane":
+        oldArray = this.state.kaneInventory;
+        break;
+      case "Roque":
+        oldArray = this.state.roqueInventory;
+        break;
+      case "Urvyn":
+        oldArray = this.state.urvynInventory;
+        break;*/
     }
+
+    //if subtraction
+    if (operation) {
+
+      //only change value if greater than 0
+      if (oldArray[placeInArray] > 0) {
+        oldArray[placeInArray] -= 1;
+        this.setState({
+          changeState: oldArray
+        }) 
+      }
+    } //changes with addition
+    else {      
+      oldArray[placeInArray] += 1;
+      this.setState({
+        changeState: oldArray
+      })
+    }
+    
 
   }
 
