@@ -7,7 +7,7 @@ import {RightButton} from './RightButton';
 import {Proficiencies} from './Proficiencies';
 import {Personalities} from './Personalities';
 import {Combat} from './Combat';
-import {TableMaker} from './TableMaker';
+import {Inventory} from './Inventory';
 
 export class Parent extends Component {
   
@@ -93,7 +93,7 @@ export class Parent extends Component {
         page = <Combat />;
         break;
       case "Inventory":
-        page = <TableMaker 
+        page = <Inventory 
           onClick = {this.updateCurrentInventory}
           current = {this.state.currentInventory}
           currentInv = {currentTable}/>;

@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import './App.css';
 import { CharacterNavBar } from './CharacterNavBar';
 
-export class TableMaker extends Component {
+export class Inventory extends Component {
 	constructor(props) {
 		super(props);
 		this.makeTable = this.makeTable.bind(this);
+		this.handleClick = this.handleClick.bind(this);
 	}
 
 	//generates a table
@@ -23,7 +24,7 @@ export class TableMaker extends Component {
 			for (let j=0;j<2;j++) {
 				if (j===1) {
 					//includes + and - sign next to quantities
-					children.push(<td key={"col"+count}><div className="inventory-plus">-</div>{test[count]}<div className="inventory-minus">+</div></td>);
+					children.push(<td key={"col"+count}><div className="inventory-plus" counter={count} onClick={this.handleClick}>-</div><span>{test[count]}</span><div className="inventory-minus">+</div></td>);
 				} else {
 					//just the item name
 					children.push(<td key={"col"+count}>{test[count]}</td>);
@@ -38,6 +39,12 @@ export class TableMaker extends Component {
 		return table;
 		
 		}
+
+	handleClick(e) {
+		console.log(e.currentTarget.innerText);
+		console.log(e.target.getAttribute('counter'));
+		console.log(e.target.getAttribute('class') === "inventory-plus");
+	}
 
 	//render function
 	render() {
