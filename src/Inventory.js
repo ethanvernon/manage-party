@@ -24,7 +24,7 @@ export class Inventory extends Component {
 			for (let j=0;j<2;j++) {
 				if (j===1) {
 					//includes + and - sign next to quantities
-					children.push(<td key={"col"+count}><div className="inventory-plus" counter={count} onClick={this.handleClick}>-</div><span>{test[count]}</span><div className="inventory-minus">+</div></td>);
+					children.push(<td key={"col"+count}><div className="inventory-plus" counter={count} onClick={this.handleClick}>-</div><span>{test[count]}</span><div className="inventory-minus" counter={count} onClick={this.handleClick}>+</div></td>);
 				} else {
 					//just the item name
 					children.push(<td key={"col"+count}>{test[count]}</td>);

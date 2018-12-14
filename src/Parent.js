@@ -85,6 +85,13 @@ export class Parent extends Component {
             augestInventory: oldArray
           }) 
         }
+      } else {
+        let oldArray = this.state.augestInventory;
+        
+        oldArray[placeInArray] += 1;
+        this.setState({
+          augestInventory: oldArray
+        })
       }
     }
 
