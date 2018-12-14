@@ -17,7 +17,11 @@ export class Parent extends Component {
     this.state = {
       menuTitle: 'Proficiencies',
       currentPersonality: 'Augest',
-      currentInventory: 'Augest'
+      currentInventory: 'Augest',
+      augestInventory:  ["mace", 1, "chain mail", 1, "light crossbow", 1, "crossbow bolts", 1, "shield", 1, "holy symbol", 1, "prayer book", 1, "stick of incense", 5, 
+                        "vestments", 1, "common clothes", 1, "belt pouch", 1, "Gold", 15],
+      kalistaInventory: ["glaive", 1, "javelin", 5, "chain mail", 1, "holy symbol", 1, "backpack", 1, "blanket", 1, "candle", 10, "tinderbox", 1, "alms box", 1, "block of incense", 1, 
+                        "censer", 1, "vestments", 1, "rations", 2, "waterskin", 1]
     };
 
     this.changeTitle = this.changeTitle.bind(this);
@@ -73,7 +77,7 @@ export class Parent extends Component {
 
   render() {
     let page;
-
+    let currentTable = this.state.currentInventory == "Augest" ? this.state.augestInventory : this.state.kalistaInventory;
 
     //renders appropriate menu depending on this.state.menuTitle
     switch (this.state.menuTitle) {
@@ -91,7 +95,8 @@ export class Parent extends Component {
       case "Inventory":
         page = <TableMaker 
           onClick = {this.updateCurrentInventory}
-          current = {this.state.currentInventory}/>;
+          current = {this.state.currentInventory}
+          currentInv = {currentTable}/>;
         break;
     }
 

@@ -7,7 +7,7 @@ export class CharacterNavBar extends Component {
 		this.handleClick = this.handleClick.bind(this);
 	}
 
-	//passes argument back to updateCurrentInventory in Parent.js
+	//passes argument back to updateCurrentInventory or updateCurrentPersonality in Parent.js
 	handleClick(name) {
 		console.log(name.currentTarget.innerText);
 		this.props.onClick(name.currentTarget.innerText);

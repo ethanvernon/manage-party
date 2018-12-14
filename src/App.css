@@ -71,10 +71,23 @@ table, th, td {
   border-collapse: collapse;  
 }
 
-.inventory-op {
-  textAlign:center;
+.inventory-plus {
+  text-align:left;
+  float:left;
   display:inline-block;
-  width:33%;
-  margin-left: auto;
-  marginRight:auto;
+  margin-left: 20px;
+  width:10px;
+}
+
+.inventory-minus {
+  text-align:right;
+  float:right;
+  display:inline-block;
+  margin-right: 20px;
+  width:10px;
+}
+
+.inventory-minus:hover,
+.inventory-plus:hover {
+    cursor:pointer;
 }
