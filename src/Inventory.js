@@ -9,7 +9,7 @@ export class Inventory extends Component {
 		this.handleClick = this.handleClick.bind(this);
 	}
 
-	//generates a table
+	//generates a table, takes an array argument in format (itemName, quantity, itenName, quantity....)
 	makeTable(arr) {
 		let test = arr;
 		let table = [];
@@ -38,12 +38,19 @@ export class Inventory extends Component {
 		
 		return table;
 		
-		}
+	}
 
 	handleClick(e) {
 		console.log(e.currentTarget.innerText);
 		console.log(e.target.getAttribute('counter'));
 		console.log(e.target.getAttribute('class') === "inventory-plus");
+		console.log(this.props.current);
+
+		let character = this.props.current;
+		let operation = e.target.getAttribute('class') === "inventory-plus";
+		let placeInArray = e.target.getAttribute('counter');
+		
+		this.props.onChange(character, operation, placeInArray);
 	}
 
 	//render function

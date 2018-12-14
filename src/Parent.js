@@ -27,6 +27,7 @@ export class Parent extends Component {
     this.changeTitle = this.changeTitle.bind(this);
     this.updateCurrentPersonality = this.updateCurrentPersonality.bind(this);
     this.updateCurrentInventory = this.updateCurrentInventory.bind(this);
+    this.changeInventory = this.changeInventory.bind(this);
   }
 
 
@@ -73,6 +74,22 @@ export class Parent extends Component {
     })
   }
 
+  changeInventory(character, operation, placeInArray) {
+    if (character === "Augest") {
+      if (operation) {
+        let oldArray = this.state.augestInventory;
+
+        if (oldArray[placeInArray] > 0) {
+          oldArray[placeInArray] -= 1;
+          this.setState({
+            augestInventory: oldArray
+          }) 
+        }
+      }
+    }
+
+  }
+
 
 
   render() {
@@ -96,7 +113,8 @@ export class Parent extends Component {
         page = <Inventory 
           onClick = {this.updateCurrentInventory}
           current = {this.state.currentInventory}
-          currentInv = {currentTable}/>;
+          currentInv = {currentTable}
+          onChange = {this.changeInventory}/>;
         break;
     }
 
