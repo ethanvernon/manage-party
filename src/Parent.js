@@ -21,7 +21,13 @@ export class Parent extends Component {
       augestInventory:  ["mace", 1, "chain mail", 1, "light crossbow", 1, "crossbow bolts", 1, "shield", 1, "holy symbol", 1, "prayer book", 1, "stick of incense", 5, 
                         "vestments", 1, "common clothes", 1, "belt pouch", 1, "Gold", 15],
       kalistaInventory: ["glaive", 1, "javelin", 5, "chain mail", 1, "holy symbol", 1, "backpack", 1, "blanket", 1, "candle", 10, "tinderbox", 1, "alms box", 1, "block of incense", 1, 
-                        "censer", 1, "vestments", 1, "rations", 2, "waterskin", 1]
+                        "censer", 1, "vestments", 1, "rations", 2, "waterskin", 1],
+      kaneInventory:    ["greatsword", 1, "light crossbow", 1, "crossbow bolt", 20, "scale mail", 1, "backpack", 1, "bedroll", 1, "mess kit", 1, "tinderbox", 1, "torch", 10, "rations", 10,
+                        "waterskin", 1, "hempen rope", 1, "set of fine clothes", 1, "signet ring", 1, "scroll of pedigree", 1],
+      roqueInventory:   ["longbow", 1, "arrows", 20, "short sword", 2, "backpack", 1, "bedroll", 1, "mess kit", 1, "tinderbox", 1, "torch", 10, "rations", 10, "waterskin", 1, "hempen rope", 1,
+                        "guild letter of introduction", 1, "traveler's clothes", 1, "calligrapher's supplies", 1],
+      urvynInventory:   ["staff", 1, "dagger", 1, "sling", 1, "sling bullets", 40, "arcane focus", 1, "spellbook", 1, "hunting trap", 1, "stag skull", 1, "traveler's clothes", 1, "belt pouch", 1,
+                        "winter blanket", 1, "amythest ore (spent)", 1, "rituals of the Paramosits", 1]
     };
 
     this.changeTitle = this.changeTitle.bind(this);
@@ -89,15 +95,18 @@ export class Parent extends Component {
         oldArray = this.state.kalistaInventory;
         changeState = "kalistaInventory";
         break;
-      /*case "Kane":
+      case "Kane":
         oldArray = this.state.kaneInventory;
+        changeState = "kalistaInventory";
         break;
       case "Roque":
         oldArray = this.state.roqueInventory;
+        changeState = "kalistaInventory";
         break;
       case "Urvyn":
         oldArray = this.state.urvynInventory;
-        break;*/
+        changeState = "kalistaInventory";
+        break;
     }
 
     //if subtraction
@@ -111,21 +120,37 @@ export class Parent extends Component {
         }) 
       }
     } //changes with addition
-    else {      
+    else {
       oldArray[placeInArray] += 1;
       this.setState({
         changeState: oldArray
       })
     }
-    
-
   }
 
 
 
   render() {
     let page;
-    let currentTable = this.state.currentInventory == "Augest" ? this.state.augestInventory : this.state.kalistaInventory;
+    let currentTable;
+
+    switch (this.state.currentInventory) {
+      case "Augest":
+        currentTable = this.state.augestInventory;
+        break;
+      case "Kalista":
+        currentTable = this.state.kalistaInventory;
+        break;
+      case "Kane":
+        currentTable = this.state.kaneInventory;
+        break;
+      case "Roque":
+        currentTable = this.state.roqueInventory;
+        break;
+      case "Urvyn":
+        currentTable = this.state.urvynInventory;
+        break;
+    }
 
     //renders appropriate menu depending on this.state.menuTitle
     switch (this.state.menuTitle) {
