@@ -8,6 +8,7 @@ import {Proficiencies} from './Proficiencies';
 import {Personalities} from './Personalities';
 import {Combat} from './Combat';
 import {Inventory} from './Inventory';
+import {DiceRoller} from './DiceRoller';
 
 export class Parent extends Component {
   
@@ -18,13 +19,13 @@ export class Parent extends Component {
       menuTitle: 'Proficiencies',
       currentPersonality: 'Augest',
       currentInventory: 'Augest',
-      augestInventory:  ["mace", 1, "chain mail", 1, "light crossbow", 1, "crossbow bolts", 1, "shield", 1, "holy symbol", 1, "prayer book", 1, "stick of incense", 5, 
+      augestInventory:  ["mace", 1, "chain mail", 1, "light crossbow", 1, "crossbow bolts", 15, "shield", 1, "holy symbol", 1, "prayer book", 1, "stick of incense", 5, 
                         "vestments", 1, "common clothes", 1, "belt pouch", 1, "Gold", 15],
       kalistaInventory: ["glaive", 1, "javelin", 5, "chain mail", 1, "holy symbol", 1, "backpack", 1, "blanket", 1, "candle", 10, "tinderbox", 1, "alms box", 1, "block of incense", 1, 
-                        "censer", 1, "vestments", 1, "rations", 2, "waterskin", 1],
-      kaneInventory:    ["greatsword", 1, "light crossbow", 1, "crossbow bolt", 20, "scale mail", 1, "backpack", 1, "bedroll", 1, "mess kit", 1, "tinderbox", 1, "torch", 10, "rations", 10,
+                        "censer", 1, "vestments", 1, "rations", 0, "waterskin", 1],
+      kaneInventory:    ["greatsword", 1, "light crossbow", 1, "crossbow bolt", 20, "scale mail", 1, "backpack", 1, "bedroll", 1, "mess kit", 1, "tinderbox", 1, "torch", 8, "rations", 6,
                         "waterskin", 1, "hempen rope", 1, "set of fine clothes", 1, "signet ring", 1, "scroll of pedigree", 1],
-      roqueInventory:   ["longbow", 1, "arrows", 20, "short sword", 2, "backpack", 1, "bedroll", 1, "mess kit", 1, "tinderbox", 1, "torch", 10, "rations", 10, "waterskin", 1, "hempen rope", 1,
+      roqueInventory:   ["longbow", 1, "arrows", 10, "short sword", 2, "backpack", 1, "bedroll", 1, "mess kit", 1, "tinderbox", 1, "torch", 7, "rations", 6, "waterskin", 1, "hempen rope", 1,
                         "guild letter of introduction", 1, "traveler's clothes", 1, "calligrapher's supplies", 1],
       urvynInventory:   ["staff", 1, "dagger", 1, "sling", 1, "sling bullets", 40, "arcane focus", 1, "spellbook", 1, "hunting trap", 1, "stag skull", 1, "traveler's clothes", 1, "belt pouch", 1,
                         "winter blanket", 1, "amythest ore (spent)", 1, "rituals of the Paramosits", 1]
@@ -171,6 +172,9 @@ export class Parent extends Component {
           current = {this.state.currentInventory}
           currentInv = {currentTable}
           onChange = {this.changeInventory}/>;
+        break;
+      case "Dice roller":
+        page = <DiceRoller />
         break;
     }
 
