@@ -15,6 +15,8 @@ export class DiceRoller extends Component {
 		let num = document.getElementById("numberOf").value;
 		let type = document.getElementById("diceType").value;
 		let results = [];
+		var resultsArr = [];
+		resultsArr.push(document.getElementById("resultsBox").innerHTML);
 
 		if (parseInt(num)==num && parseInt(type) == type) {
 			console.log("both are integers");
@@ -25,8 +27,14 @@ export class DiceRoller extends Component {
 
 			console.log(results);
 
+			results.unshift("<br/>");
+			resultsArr.unshift(results);
+			console.log(resultsArr);
+			document.getElementById("resultsBox").innerHTML = resultsArr.join("");
 
 		}
+
+		
 	}
 
 
@@ -40,7 +48,7 @@ export class DiceRoller extends Component {
 			<input type="button" name="submit" value="Roll!" style={{marginLeft:10}} onClick={this.handleSubmit}/>
 			</form>
 			<br />
-			<textarea name="runningtotal" cols="25" rows="10" style={{fontSize:12}}></textarea>
+			<div id="resultsBox" name="runningtotal" style={{fontSize:12}}></div>
 			</div>
 		)
 	}
