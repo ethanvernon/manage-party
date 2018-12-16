@@ -26,8 +26,8 @@ export class DiceRoller extends Component {
 			}
 
 			console.log(results);
-
-			results.unshift("<br/>");
+			results.join(", ");
+			resultsArr.unshift("<br/>");
 			resultsArr.unshift(results);
 			console.log(resultsArr);
 			document.getElementById("resultsBox").innerHTML = resultsArr.join("");
@@ -48,7 +48,7 @@ export class DiceRoller extends Component {
 			<input type="button" name="submit" value="Roll!" style={{marginLeft:10}} onClick={this.handleSubmit}/>
 			</form>
 			<br />
-			<div id="resultsBox" name="runningtotal" style={{fontSize:12}}></div>
+			<div id="resultsBox" name="runningtotal" style={{fontSize:11}}></div>
 			</div>
 		)
 	}
